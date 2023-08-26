@@ -30,12 +30,11 @@ class GFG {
 class Solution {
     int missingNumber(int array[], int n) {
         // Your Code Here
-        int s = n*(2+(n-1));
-        int total = s/2;
-        
-        int sum = Arrays.stream(array).sum();
-        
-        
-        return total - sum;
+        int sum = 0;
+        int sum1 = (n*(n+1))/2;
+        for(int i=0;i<n-1;i++){
+            sum += array[i];
+        }
+        return sum1-sum;
     }
 }
