@@ -41,15 +41,21 @@ class Solution{
     {
         
         // Your code here
-        int count =0;
-        for(int i=0;i<N;i++){
-            if(arr[i]==K){
-                count = 1;
-                break;
-            }else{
-                count =-1;
-            }
+        int left =0;
+        int right=N-1;
+        while(left<=right){
+            
+        int mid = (left)+(right-left)/2;
+        
+        if(arr[mid] == K){
+            return 1;
         }
-        return count;
+        else if(arr[mid]>K){
+            right = mid-1;
+        }else if(arr[mid]<K){
+            left = mid+1;
+        }
     }
+    return -1;
+}
 }
